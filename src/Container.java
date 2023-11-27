@@ -30,5 +30,5 @@ public abstract class Container
     }
 
     public abstract double volume();
-
+    public abstract String printDimensions();
 }

@@ -20,6 +20,25 @@ public class Main {
     public static void main(String[] args)
     {
         //sortingMain();
+        ArrayList<Container> containers = new ArrayList<>();
+        containers.add(new Cylindar("00001", "Milk",10,10));
+        containers.add(new Rectangle("00002", "Bread",10,10, 5));
+        containers.add(new Cylindar("00003", "Orange Juice",5,5));
+        containers.add(new Rectangle("00004", "Bread",10,10, 5));
+        int totalVolume = 0;
+        for(Container c: containers)
+        {
+            totalVolume+=c.volume();
+        }
+        System.out.println("Total Volume: " + totalVolume );
+        System.out.println("Details of Cylindars: ");
+        for(Container c: containers)
+        {
+            if(c instanceof Cylindar) {
+                System.out.print(c.getId() + " - ");
+                System.out.println(c.printDimensions());
+            }
+        }
 
     }
 
