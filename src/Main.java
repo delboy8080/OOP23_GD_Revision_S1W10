@@ -19,6 +19,11 @@ public class Main {
     }
     public static void main(String[] args)
     {
+        //sortingMain();
+
+    }
+
+    private static void sortingMain() {
         Country c1 = new Country("Ireland",4500000, 84421, "Dublin", Continent.EUROPE);
         Country c2 = new Country("France",9000000, 250000, "Paris", Continent.EUROPE);
         Country c3 = new Country("Germany",9000000, 250000, "Brussels", Continent.EUROPE);
@@ -62,5 +67,18 @@ public class Main {
                 key);
         System.out.println(index);
         System.out.println(countries.get(index));
+        System.out.println("\n\n\n\n\n");
+        Collections.sort(countries,
+                (cn1, cn2)->{
+                    if(cn1.getContinent().equals
+                            (cn2.getContinent()))
+                    {
+                        return cn1.getName().compareTo
+                                (cn2.getName());
+                    }
+                    return cn1.getContinent().compareTo
+                            (cn2.getContinent());
+                });
+        print(countries);
     }
 }
